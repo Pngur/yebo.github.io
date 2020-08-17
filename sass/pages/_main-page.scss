@@ -1,0 +1,283 @@
+.section-about {
+   background-color: $color-white-dark;
+   padding: 12rem 0;  
+   @include respond(bp4) {padding-top: 5rem;}
+
+}
+
+.about-box {
+   text-align: center;
+
+   &__paragraph {
+      font-size: 1.8rem;
+   }
+}
+
+.section-work {
+   background-color: #fff;
+}
+
+.work-box {
+   &__work {
+      @include flexbox;
+      @include respond(bp6) {
+         flex-direction: column;
+      }
+   }
+}
+
+.work-1 {
+   &__big-image {
+      background-image: url('../img/bicycle1-main-image.png');
+      @include respond(bp6) {padding: 10rem;}
+   }
+
+   &__small-image {
+      background-image: url('../img/bicycle1-small-image.png');
+   }
+
+   &__logo {
+      width: 12.3%;
+      height: auto;
+      @include respond(bp6) {width: 20%;}
+      @include respond(bp5) {width: 50%;}
+   }
+}
+
+.work-2 {
+
+   &__big-image {
+      background-image: url('../img/bicycle2-main-img.png');
+      @include respond(bp6) {padding: 10rem;}
+   }
+
+   &__small-image {
+      background-image: url('../img/bicycle2-small-image.png');
+   }
+
+   &__logo {
+      width: 19.3%;
+      height: auto;
+      @include respond(bp6) {width: 30%;}
+      @include respond(bp5) {width: 50%;}
+   }
+}
+
+.work-3 {
+
+   &__medium-image-1 {
+      background-image: url('../img/bicycle3-medium-image-1.png');
+      @include respond(bp6) {padding: 10rem;}
+   }
+
+   &__medium-image-2 {
+      background-image: url('../img/bicycle3-medium-image-2.png');
+      @include respond(bp6) {padding: 10rem;}
+
+   }
+
+   &__small-image {
+      background-image: url('../img/bicycle3-small-image.png');
+   }
+
+   &__logo {
+      width: 45.2%;
+      height: auto;
+      @include respond(bp5) {width: 60%;}
+
+   }
+}
+
+.section-social {
+   padding: 12.4rem 0 7rem 0; 
+   background-color: $color-white-dark;
+   text-align: center;
+   @include respond(bp4) {padding-top: 5rem;}
+}
+
+.social-container {
+   margin-bottom: 10rem;
+}
+
+.social-box {
+   &__paragraph {
+      font-size: 2.4rem;
+   }
+
+   &--hidden {
+      display: none;
+   }
+}
+
+.section-shop {
+   @include flexbox;
+   flex-direction: column;
+}
+
+.shop-top {
+   @include flexbox;
+   background-color: $color-bg-discover;
+   @include respond(bp6){flex-direction: column;}
+}
+
+.shop-box {
+   flex: 0 1 33.333%;
+
+   &__row {
+      @include flexbox;
+
+      &--height {
+         height: 100%;
+      }
+   }
+
+   &__image-box {
+      flex: 0 1 50%;
+      background-color: $colot-green-dark;
+      position: relative;
+
+      &:hover  .shop-box__logo-box{
+         opacity: 1;
+         visibility: visible;
+      }
+      &:hover  .shop-box__image{
+         opacity: .3;
+      }
+   }
+
+   &__logo-box {
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+   }
+
+   &__link {
+      width: 100%;
+      height: 100%;
+   }
+
+   &__image {
+      width: inherit;
+      height: inherit;
+   }
+
+   &__block {
+      @include flexbox;
+   }
+   
+   &__block-box {
+      flex: 0 1 100%;
+      background-color: $colot-green-dark;
+      position: relative;
+
+      &:hover  .shop-box__logo-box{
+         opacity: 1;
+         visibility: visible;
+      }
+
+      &:hover  .shop-box__image{
+         opacity: .3;
+      }
+   }
+   
+   &__half-block {
+      flex: 0 1 50%;
+   }
+}
+
+.shop-bottom {
+   background-color: $color-bg-discover;
+   padding: 9rem 0;
+}
+
+.shop-discover {
+   text-align: center;
+
+   &__link,
+   &__link:visited {
+      color: $color-white;
+      text-decoration: none;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 2rem 6rem;
+      border: 1px solid $color-white;
+      font-weight: 700;
+   }
+   &__link:hover {
+      background-color: $color-white;
+      color: $color-bg-discover;
+      font-weight: 700;
+   }
+}
+
+.section-mailing {
+   background-color: $color-white;
+   padding: 11rem 2rem;
+   @include respond(bp4) {padding-top: 5rem;}
+}
+
+.mailing-form {
+   margin: 0 auto;
+   max-width: 55.4rem;
+
+		&__logo-box {
+         text-align: center;
+         margin-bottom: 3rem;
+		}
+
+		&__logo {
+         margin-bottom: 3rem;
+		}
+
+		&__input-box {
+         @include flexbox;
+         @include flexCenter;
+      }
+      
+		&__input {
+         flex: 1 1 auto;
+         width: 100%;
+         padding-left: 3rem;
+         height: 6.9rem;
+         font-style: italic;
+         font-size: 2rem;
+         margin-right: .8rem;
+         color: #cdcdcd;
+         outline: none;
+         border: 1px solid #cdcdcd;
+
+         &:focus {
+            border: 1px solid  $colot-green-light;
+         }
+      }
+      
+      &__paragraph {
+         font-size: 2.4rem;
+      }
+      
+      &__button {
+         flex: 0 0 12.6rem;
+         height: 6.9rem;
+         width: 12.6rem;
+         outline: none;
+         background-color: $colot-green-light;
+         border: none;
+         color: $color-white;
+         font-weight: 300;
+         font-size: 2.4rem;
+         cursor: pointer;
+
+         &:hover {
+            background-color: $colot-green-dark;
+
+         }
+		}
+}
+
+
+
+
+

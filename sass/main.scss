@@ -1,0 +1,16 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/fonts";
+@import "base/base";
+@import "base/typography";
+
+@import "components/navigation";
+@import "components/work";
+@import "components/slider";
+
+@import "layout/header";
+@import "layout/layout";
+@import "layout/footer";
+
+@import "pages/main-page";

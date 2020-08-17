@@ -1,0 +1,36 @@
+.slider {
+   @include flexbox;
+   @include flexCenter;
+
+   & > *:not(:last-child) {
+      margin-right: 2rem;
+   }
+
+   &__container {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+   }
+
+   &__input {
+      display: none;
+   }
+
+   &__checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1.1rem;
+      width: 1.1rem;
+      border: 1px solid #a9afb3;
+      border-radius: 50%;
+   }
+
+   &__container &__input:checked ~ &__checkmark {
+      background-color: #a9afb3;
+    }
+}

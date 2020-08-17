@@ -1,0 +1,59 @@
+.work {
+   &__content {
+      flex: 0 1 33.333%;
+   }
+
+   &__big-image {
+      flex: 0 1 66.667%;
+      @include bgimgprop;   
+      @include flexbox;
+      @include flexCenter; 
+   }
+   
+   &__medium-image {
+      flex: 0 1 33.333%;
+      @include bgimgprop;
+      @include flexbox;
+      @include flexCenter;     
+   }
+
+   &__small-image {
+      padding-bottom: 37.5%;
+      @include bgimgprop;
+      
+      &::before {
+         content: '';
+         display: block;
+         width: 0;
+         height: 0;
+         border-style: solid;
+         border-width: 1rem 1rem 0 1rem;  
+         border-color: #fff transparent transparent transparent;
+         margin:auto;
+      }
+   }
+
+   &__box {
+      font-size: 1.6rem;
+      text-align: center;
+      padding: 6.5rem;
+      background-color: $color-white;
+
+      @media only screen and (max-width: 1100px) {
+         padding: 3rem;
+      }
+   }
+
+   &__line {
+      display: inline-block;
+      height: 1px;
+      width: 5rem;
+      background-color: #d7d7d7;
+      margin: 4rem auto 0 auto;
+   }
+
+   &__paragraph {
+      font-size: 1.6rem;
+      text-align: justify;
+   }
+}

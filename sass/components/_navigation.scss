@@ -1,0 +1,106 @@
+// DESKTOP LAYOUT
+.navigation {
+   @include flexbox;
+   @include flexCenter;
+   margin-top: 3.5rem;
+
+   &__list {
+      @include flexbox;
+      @include flexCenter;
+      list-style: none;
+   }
+
+   &__item:not(:last-child) {
+      margin-right: 7.4rem;
+   }
+
+   &__item:not(:nth-child(3)) {
+      margin-bottom: 1rem;
+   }
+   
+   &__link {
+      &:link,
+      &:visited {
+         color: $color-text-nav;
+         font-size: 1.3rem;
+         @include listLayout;
+      }
+   }
+
+   &__logo {
+      width: 9.4rem;
+      height: auto;
+      @include respond(bp4) {
+         display: none;
+      }
+   }
+
+   @include respond(bp4) {
+      transform: translateY(0);
+      position: fixed;
+      transition: all .5s;
+      background-color: $colot-green-dark;
+      height: 100vh;
+      width: 100vw;
+      margin-top: 0;
+      
+      &.toggle-js {
+         transform: translateY(-100%);
+      }
+
+      &__list {
+         flex-direction: column;
+         text-align: center;
+      }
+      &__item:not(:last-child) {
+         margin: 0 0 5rem 0;
+      }
+      &__item:nth-child(3) {
+         display: none;
+      }
+      &__link {
+         &:link,
+         &:visited {
+            color: $color-white;
+            font-size: 2rem;
+            @include listLayout;
+         }
+      }
+   }
+}
+
+
+//MOBILE HEADER ROW
+.mobile-row {
+   display: none;
+   align-items:  center;
+   margin: 2rem 3rem;
+   justify-content: space-between;   
+
+   @include respond(bp4) {
+      @include flexbox;
+   }
+   
+   &__logo {
+      width: 8rem;
+      height: auto;
+   }
+   &__menu-icon {
+      @include flexbox;
+      @include flexCenter;
+      width: 4rem;
+      height: 4rem;
+      position: fixed;
+      right: 5%;
+   }
+
+   &__burger-icon {
+      @include burgerIcon($color-text-nav);
+   }
+
+   &__cross-icon {
+      transition: transform 0.3s;
+      @include crossIcon($color-text-nav);
+   }
+}
+

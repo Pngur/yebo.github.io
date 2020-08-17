@@ -1,0 +1,52 @@
+.footer {
+   background-color: $color-white-dark;
+   padding: 4rem 0;
+}
+
+.footer-box {
+   @include flexbox;
+   align-items: center;
+   justify-content: space-between;
+   @include respond(bp4) {
+      flex-direction: column;
+      justify-content: center;
+      & > *:not(:last-child) {padding-bottom: 3rem;}      
+   }
+
+
+		&__text {
+         @include flexbox;
+         flex-direction: column;   
+         @include respond(bp4) {text-align: center;}
+      }
+      
+      &__social {
+         & > *:last-child {
+            margin-right: 5rem;
+            @include respond(bp4) {margin-right: 0rem;}
+         }
+         
+      }
+
+		&__icons {
+         width: 3.4rem;
+         height: 3.4rem;
+         margin-right: 1.5rem;
+		}
+
+		&__credits {
+         @include flexbox;
+         @include flexCenter;
+		}
+
+		&__paragraph {
+         margin-right: .9rem;
+         font-size: 1.4rem;
+         line-height: 1.3;
+         &--b {
+            font-size: 1.6rem;
+            font-weight: 700;
+         }
+		}
+}
+
