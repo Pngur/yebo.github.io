@@ -10,14 +10,30 @@
       list-style: none;
    }
 
-   &__item:not(:last-child) {
-      margin-right: 7.4rem;
+   &__item:not(:last-child) {margin-right: 10rem;}
+   &__item:not(:nth-child(3)) {margin-bottom: -1rem;}
+   &__item {position: relative;}
+
+   &__item:last-child {
+      &::before {
+         content: "•";
+         position: absolute;
+         color: $color-text-nav;
+         top: .5rem;
+         right: 12rem;
+      }
    }
 
-   &__item:not(:nth-child(3)) {
-      margin-bottom: 1rem;
+   &__item:first-child {
+      &::after {
+         content: "•";
+         position: absolute;
+         color: $color-text-nav;
+         top: .5rem;
+         left: 12.5rem;
+      }
    }
-   
+
    &__link {
       &:link,
       &:visited {
@@ -25,6 +41,11 @@
          font-size: 1.3rem;
          @include listLayout;
       }
+   }
+
+   &__link:hover {
+      color: $colot-green-dark;
+      transition: color .2s;
    }
 
    &__logo {
@@ -68,7 +89,6 @@
       }
    }
 }
-
 
 //MOBILE HEADER ROW
 .mobile-row {
